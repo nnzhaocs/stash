@@ -75,7 +75,7 @@ func (c *Cache) PutReader(key string, r io.Reader) error {
 }
 
 // Get returns a reader for a blob in the cache, or ErrNotFound otherwise.
-func (c *Cache) Get(key string) (io.ReadCloser, error) {
+func (c *Cache) Get(key string) (io.Reader, error) {
 	c.l.RLock()
 	defer c.l.RUnlock()
 
